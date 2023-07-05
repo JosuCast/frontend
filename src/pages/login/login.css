@@ -1,0 +1,343 @@
+
+.formulario button{
+    color: #ffffff;
+    background: #00AEEF;
+    border: 0 none;
+    padding: 0.643rem 0.75rem;
+    font-size: 1rem;
+    
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s, background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
+    border-radius: 4px;
+}
+
+
+
+.containerImgForm[_ngcontent-dxi-c32] {
+    border-radius: 15px;
+    box-shadow: 4px 4px 8px #9ab9c5;
+}
+.imgLeft[_ngcontent-dxi-c32] {
+    margin-left: auto;
+    margin-right: auto;
+    width: 550px;
+    height: 740px;
+    object-fit: cover;
+    border-radius: 15px 0 0 15px;
+}
+
+.containerRight[_ngcontent-dxi-c32] {
+    width: 550px;
+    border-radius: 15px;
+}
+
+.p-ai-center {
+    align-items: center;
+}
+.p-jc-center {
+    justify-content: center;
+}
+.p-px-6 {
+    padding-left: 3rem!important;
+    padding-right: 3rem!important;
+}
+
+.logoTecsup {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.p-py-1 {
+    padding-top: 0.25rem!important;
+    padding-bottom: 0.25rem!important;
+}
+.p-px-3 {
+    padding-left: 1rem!important;
+    padding-right: 1rem!important;
+}
+div {
+    display: block;
+}
+
+.containerImgForm[_ngcontent-dxi-c32] {
+    border-radius: 15px;
+    box-shadow: 4px 4px 8px #9ab9c5;
+}
+.card:last-child {
+    margin-bottom: 0;
+}
+.p-p-0 {
+    padding: 0!important;
+}
+.card {
+    background-color: #ffffff;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+}
+.p-ai-center {
+    align-items: center;
+}
+.p-jc-center {
+    justify-content: center;
+}
+.p-d-flex {
+    display: flex!important;
+}
+.pages-body {
+    height: 100vh;
+}
+* {
+    box-sizing: border-box;
+}
+
+.imgLeft[_ngcontent-dxi-c32] {
+    margin-left: auto;
+    margin-right: auto;
+    width: 550px;
+    height: 740px;
+    object-fit: cover;
+    border-radius: 15px 0 0 15px;
+}
+img {
+    
+    overflow: clip;
+}
+.p-flex-column {
+    flex-direction: column!important;
+}
+
+.containerRight[_ngcontent-dxi-c32] h4[_ngcontent-dxi-c32] {
+    color: #00aeef;
+    font-weight: 400;
+}
+
+.p-text-center {
+    text-align: center!important;
+    color: #00aeef;
+}
+
+.p-mt-3 {
+    margin-top: 1rem!important;
+}
+
+h4 {
+    font-size: 1.5rem;
+}
+h1, h2, h3, h4, h5, h6 {
+    margin: 1.5rem 0 1rem 0;
+    font-family: inherit;
+    font-weight: 600;
+    line-height: 1.2;
+    color: inherit;
+}
+form {
+    display: block;
+    margin-top: 0em;
+}
+.usernameEmail[_ngcontent-dxi-c32] span[_ngcontent-dxi-c32] {
+    width: 300px;
+}
+.p-inputgroup .p-float-label {
+    display: flex;
+    align-items: stretch;
+    width: 100%;
+}
+.p-float-label {
+    display: block;
+    position: relative;
+}
+
+.usernameEmail[_ngcontent-dxi-c32] input[_ngcontent-dxi-c32] {
+    height: 42px;
+    width: 300px;
+    background: #F5F5F5;
+    border: 2px solid #E7E6E6;
+    border-radius: 5px;
+}
+.p-inputgroup .p-float-label:last-child input {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.p-inputgroup .p-float-label:first-child input {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.p-inputgroup > .p-float-label > .p-component {
+    border-radius: 0;
+    margin: 0;
+}
+.p-inputgroup input:first-child {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.p-inputgroup .p-inputtext{
+    flex: 1 1 auto;
+    width: 1%;
+}
+.p-inputtext {
+    margin: 0;
+}
+
+input[_ngcontent-dxi-c32] {
+    background: #F5F5F5;
+}
+.p-float-label label {
+    position: absolute;
+    pointer-events: none;
+    top: 50%;
+    margin-top: -0.5rem;
+    transition-property: all;
+    transition-timing-function: ease;
+    line-height: 1;
+}
+.p-float-label > label {
+    left: 0.75rem;
+    color: #CECDCD;
+    transition-duration: 0.2s;
+}
+.p-component, .p-component * {
+    box-sizing: border-box;
+}
+.p-inputtext {
+    font-family: Roboto, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.87);
+    background: #ffffff;
+    padding: 0.75rem 0.75rem;
+    border: 1px solid rgba(0, 0, 0, 0.38);
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s, background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
+    appearance: none;
+    border-radius: 4px;
+}
+.p-component {
+    font-family: Roboto, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+}
+input[type="text" i] {
+    padding: 1px 2px;
+}
+
+.p-mb-4 {
+    margin-bottom: 1.5rem!important;
+}
+.p-mt-1 {
+    margin-top: 0.25rem!important;
+}
+
+.p-flex-column {
+    flex-direction: column!important;
+}
+.p-grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.5rem;
+    margin-left: -0.5rem;
+    margin-top: -0.5rem;
+}
+.p-grid>.p-col, .p-grid>[class*=p-col] {
+    box-sizing: border-box;
+}
+.p-text-center {
+    text-align: center!important;
+}
+.p-col {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 0.5rem;
+}
+a[_ngcontent-dxi-c32] {
+    text-decoration: none;
+    color: #00aeef;
+}
+body a {
+    text-decoration: none;
+    color: #00AEEF;
+}
+.containerRight[_ngcontent-dxi-c32] button[_ngcontent-dxi-c32] {
+    height: 50px;
+    width: 300px;
+}
+.p-button {
+    margin: 0;
+    display: inline-flex;
+    cursor: pointer;
+    -webkit-user-select: none;
+    user-select: none;
+    align-items: center;
+    vertical-align: bottom;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+.p-component {
+    box-sizing: border-box;
+}
+.p-button {
+    font-weight: 500;
+    min-width: 4rem;
+}
+.p-button {
+    color: #ffffff;
+    background: #00AEEF;
+    border: 0 none;
+    padding: 0.643rem 0.75rem;
+    font-size: 1rem;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s, background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
+    border-radius: 4px;
+}
+.p-component {
+    font-family: Roboto, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;
+    font-size: 1rem;
+    font-weight: normal;
+}
+.p-button-label {
+    transition: all .2s;
+}
+.p-button-label {
+    flex: 1 1 auto;
+}
+.p-component, .p-component * {
+    box-sizing: border-box;
+}
+button {
+    appearance: auto;
+    writing-mode: horizontal-tb !important;
+    text-rendering: auto;
+    color: buttontext;
+    letter-spacing: normal;
+    word-spacing: normal;
+    line-height: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    box-sizing: border-box;
+    background-color: buttonface;
+    margin: 0em;
+    padding: 1px 6px;
+    border-width: 2px;
+    border-style: outset;
+    border-color: buttonborder;
+    border-image: initial;
+}
+.p-button {
+    color: #ffffff;
+    background: #00AEEF;
+    border: 0 none;
+    padding: 0.643rem 0.75rem;
+    font-size: 1rem;
+    font: bold;
+    transition: background-color 0.2s, border-color 0.2s, color 0.2s, box-shadow 0.2s, background-size 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
+    border-radius: 4px;
+    
+}
+
+.pages-body.login-page {
+    background-image: url('../../assets/img/fondo-v2.png');
+    background-size: cover;
+}

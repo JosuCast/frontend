@@ -1,0 +1,5 @@
+export { default as Login } from './login/Login'  
+export { default as Agregar } from './agregar/Agregar'  
+export { default as Lista } from './lista_comidas/Lista_comidas'
+export { default as Editar } from './editar/Editar'
+export { default as Lista_Categorias } from './categorias/ListaCategorias'

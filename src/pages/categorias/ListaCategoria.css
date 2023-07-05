@@ -1,0 +1,15 @@
+.table{
+    display: flex;
+    justify-content: center;
+
+}
+
+table{
+    width: 60%;
+    border: none;
+}
+
+tr,th,td {
+    border:none;
+    border-style: none;
+} 
