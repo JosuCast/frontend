@@ -8,8 +8,6 @@ import Swal from "sweetalert2";
 
 const Lista = () => {
 
-  
-
   const { data } = useFetch("http://localhost:4000/api/comidas/");
 
   if (data === null) {

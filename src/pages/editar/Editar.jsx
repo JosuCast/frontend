@@ -17,7 +17,7 @@ const Editar = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(`http://localhost:4000/api/comidas/${id}`,{
+        const response = await fetch(`https://apiapp-production.up.railway.app/api/comidas/${id}`,{
           headers:{
             'access-token' : localStorage.getItem("token")
         }
@@ -47,7 +47,7 @@ const Editar = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    fetch(`http://localhost:4000/api/comidas/${id}`, {
+    fetch(`https://apiapp-production.up.railway.app/api/comidas/${id}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',

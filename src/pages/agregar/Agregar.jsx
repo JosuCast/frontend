@@ -15,7 +15,7 @@ const Agregar = () => {
 
   const navigate = useNavigate();
 
-  const { data } = useFetch("http://localhost:4000/api/comidas/verificar");
+  const { data } = useFetch("https://apiapp-production.up.railway.app/api/comidas/verificar");
 
   const [categorias, setCategorias] = useState(null);
 
