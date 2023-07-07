@@ -10,7 +10,7 @@ import * as AiIcons from "react-icons/ai";
 const Lista_Categorias = () => {
   const navigate = useNavigate();
 
-  const { data } = useFetch("http://localhost:4000/api/comidas/verificar");
+  const { data } = useFetch("https://apiapp-production.up.railway.app/api/comidas/verificar");
 
   const [categorias, setCategorias] = useState(null);
 
@@ -19,7 +19,7 @@ const Lista_Categorias = () => {
   const showModalView = () => setShowModal(!showModal);
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/categoria")
+    fetch("https://apiapp-production.up.railway.app/api/categoria")
       .then((response) => response.json())
       .then((categorias) => setCategorias(categorias));
   }, []);

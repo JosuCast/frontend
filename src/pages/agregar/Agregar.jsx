@@ -20,7 +20,7 @@ const Agregar = () => {
   const [categorias, setCategorias] = useState(null);
 
   useEffect(() => {
-    fetch("http://localhost:4000/api/categoria")
+    fetch("https://apiapp-production.up.railway.app/api/categoria")
       .then((response) => response.json())
       .then((categorias) => setCategorias(categorias));
   }, []);
