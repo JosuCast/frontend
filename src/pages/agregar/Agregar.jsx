@@ -45,7 +45,7 @@ const Agregar = () => {
     formData.append("precio", values.precio);
     formData.append("imagen", values.imagen);
 
-    fetch("http://localhost:4000/api/comidas", {
+    fetch("https://apiapp-production.up.railway.app/api/comidas", {
       method: "POST",
       body: formData,
     })
