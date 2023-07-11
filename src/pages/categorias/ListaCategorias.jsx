@@ -16,8 +16,8 @@ const Lista_Categorias = () => {
     nombre: "",
   });
 
-  const { data } = useFetch("https://apiapptesis.up.railway.app/api/comidas/verificar");
-
+  const { data } = useFetch("https://apiapptesis.up.railway.app/api/comidas/");
+  
   const handleInputChange = (event) => {
     const { name, value } = event.target;
 

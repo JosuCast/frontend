@@ -13,7 +13,7 @@ const Editar = () => {
     precio: '',
   });
 
-  const { data } = useFetch("https://apiapptesis.up.railway.app/api/comidas/verificar");
+  const { data } = useFetch("https://apiapptesis.up.railway.app/api/comidas/");
 
   useEffect(() => {
     const fetchData = async () => {
