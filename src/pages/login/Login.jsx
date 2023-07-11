@@ -36,6 +36,8 @@ const Login = () => {
     .then((response) => response.json())
     .then((data) => {
       if (data.user.email = values.email) {
+        console.log(data.user.stsTokenManager.accessToken);
+        localStorage.setItem("token", data.user.stsTokenManager.accessToken );
         navigate('/lista');
       } else {
         alert("Error al iniciar sesión");

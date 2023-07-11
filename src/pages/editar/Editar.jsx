@@ -13,7 +13,7 @@ const Editar = () => {
     precio: '',
   });
 
-  
+  const { data } = useFetch("https://apiapptesis.up.railway.app/api/comidas/verificar");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -21,7 +21,7 @@ const Editar = () => {
         const response = await fetch(`https://apiapptesis.up.railway.app/api/comidas/${id}`,{
           headers:{
             'access-token' : localStorage.getItem("token")
-        }
+        } 
         }).catch((error)=>{
           navigate('/');
       });

@@ -13,7 +13,12 @@ export function useFetch(url){
         
         fetch(url)
             .then((res)=> res.json())
-            .then((data)=> setData(data))
+            .then((data)=> {
+                setData(data)
+                if (localStorage.getItem("token")==null){
+                    navigate('/');
+                }
+            })
             .catch((error)=>{
                 navigate('/');
             })
