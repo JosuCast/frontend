@@ -1,39 +1,50 @@
 import Dashboard from "../dashboard/Dashboard";
-import { useNavigate } from "react-router-dom";
+import { useParams,useNavigate } from "react-router-dom";
 import { useFetch } from "../../../useFetch";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./ListaCategoria.css";
 import * as BiIcons from "react-icons/bi";
 import * as AiIcons from "react-icons/ai";
+import Swal from "sweetalert2";
 
 const Lista_Categorias = () => {
 
+  const {id} = useParams();
+
   const [values, setValues] = useState({
-    nombre: ""
+    nombre: "",
   });
 
   const handleInputChange = (event) => {
-    const { name, value, type, files } = event.target;
-    const inputValue = type === "file" ? files[0] : value;
+    const { name, value } = event.target;
+
     setValues({
       ...values,
-      [name]: inputValue,
+      [name]: value,
     });
   };
-
-  const navigate = useNavigate();
-
-  const { data } = useFetch("https://apiapp-production.up.railway.app/api/comidas/verificar");
 
   const [categorias, setCategorias] = useState(null);
 
   const [showModal, setShowModal] = useState(false);
 
+  const [editModalOpen, setEditModalOpen] = useState(false);
+
+  const showEditModal = () => {
+    console.log(editModalOpen);
+    setEditModalOpen(true);
+  };
+
+  const closeEditModal = () => {
+    console.log(editModalOpen);
+    setEditModalOpen(false);
+  };
+
   const showModalView = () => setShowModal(!showModal);
 
   useEffect(() => {
-    fetch("https://apiapp-production.up.railway.app/api/categoria")
+    fetch("https://apiapptesis.up.railway.app/api/categoria")
       .then((response) => response.json())
       .then((categorias) => setCategorias(categorias));
   }, []);
@@ -42,12 +53,12 @@ const Lista_Categorias = () => {
     event.preventDefault();
     console.log(values);
 
-    const formData = new FormData();
-    formData.append("nombre", values.nombre);
-
-    fetch("https://apiapp-production.up.railway.app/api/categoria", {
+    fetch("https://apiapptesis.up.railway.app/api/categoria", {
       method: "POST",
-      body: formData,
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -55,11 +66,20 @@ const Lista_Categorias = () => {
         window.location.reload();
       })
       .catch((error) => {
+        console.log(values);
         console.error("Error:", error);
       });
   };
 
-  const handleDelete = (id) =>{
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: "btn btn-success",
+      cancelButton: "btn btn-danger",
+    },
+    buttonsStyling: false,
+  });
+
+  const handleDelete = (id) => {
     console.log(id);
     swalWithBootstrapButtons
       .fire({
@@ -73,7 +93,7 @@ const Lista_Categorias = () => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          fetch(`https://apiapp-production.up.railway.app/api/categoria/${id}`, {
+          fetch(`https://apiapptesis.up.railway.app/api/categoria/${id}`, {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",
@@ -82,7 +102,6 @@ const Lista_Categorias = () => {
             .then((response) => response.json())
             .then((data) => {
               setResponse(data);
-              
             })
             .catch((error) => {
               console.error("Error:", error);
@@ -91,9 +110,9 @@ const Lista_Categorias = () => {
           swalWithBootstrapButtons.fire(
             "Deleted!",
             "Your file has been deleted.",
-            "success",
+            "success"
           );
-          setTimeout(()=>{
+          setTimeout(() => {
             window.location.reload(false);
           }, 1500);
         } else if (
@@ -107,30 +126,44 @@ const Lista_Categorias = () => {
           );
         }
       });
-  }
+  };
 
   return (
     <>
       <Dashboard />
       <div className="boton">
-        <button className="agregar" onClick={showModalView}>Agregar categoria</button>
+        <button className="agregar" onClick={showModalView}>
+          Agregar categoria
+        </button>
       </div>
       {showModal && (
-  <div className="modal">
-    <div className="modal-content">
-      <div className="boton-div">
-      <button className="cerrar" onClick={showModalView}>X</button>
-      </div>
-      <h2>Agregar categoría</h2>
-      {/* Aquí puedes agregar los campos y elementos necesarios para agregar una categoría */}
-      <form className="form-categoria" onSubmit={handleForm}>
-        <input type="text" name="nombre" value={values.nombre} placeholder="Nombre" onChange={handleInputChange}/>
-        {/* Otros campos y elementos */}
-        <button type="submit" className="agregar">Guardar</button>
-      </form>
-    </div>
-  </div>
-)}
+        <div className="modal">
+          <div className="modal-content">
+            <div className="boton-div">
+              <button className="cerrar" onClick={showModalView}>
+                X
+              </button>
+            </div>
+            <h2>Agregar categoría</h2>
+            {/* Aquí puedes agregar los campos y elementos necesarios para agregar una categoría */}
+            <form className="form-categoria" onSubmit={handleForm}>
+              <input
+                type="text"
+                name="nombre"
+                id="nombre"
+                value={values.nombre}
+                placeholder="Nombre"
+                onChange={handleInputChange}
+              />
+              {/* Otros campos y elementos */}
+              <button type="submit" className="agregar">
+                Guardar
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
+      ;
       <div className="table">
         <table>
           <tr>
@@ -145,13 +178,42 @@ const Lista_Categorias = () => {
               <td>{categoria.nombre} </td>
               <td>{categoria.createdAt} </td>
               <td>
-                <BiIcons.BiEdit className="funcion" />
-                <AiIcons.AiFillDelete className="funcion" onClick={() => handleDelete(categoria.id_categoria)}/>
+                <BiIcons.BiEdit className="funcion" onClick={showEditModal} />
+                <AiIcons.AiFillDelete
+                  className="funcion"
+                  onClick={() => handleDelete(categoria.id_categoria)}
+                />
               </td>
             </tr>
           ))}
         </table>
       </div>
+      {editModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <div className="boton-div">
+              <button className="cerrar" onClick={closeEditModal}>
+                X
+              </button>
+            </div>
+            <h2>Editar categoría</h2>
+           
+            <form className="form-categoria" onSubmit={handleSubmit}>
+              <input
+                type="text"
+                name="nombre"
+                id="nombre"
+                value={formData.nombre}
+                placeholder="Nombre"
+                onChange={handleInputChange}
+              />
+              <button type="submit" className="agregar">
+                Guardar
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </>
   );
 };

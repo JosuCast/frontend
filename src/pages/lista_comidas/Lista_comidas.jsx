@@ -8,7 +8,7 @@ import Swal from "sweetalert2";
 
 const Lista = () => {
 
-  const { data } = useFetch("https://apiapp-production.up.railway.app/api/comidas/");
+  const { data } = useFetch("https://apiapptesis.up.railway.app/api/comidas/");
 
   if (data === null) {
     return <div>Loading...</div>;
@@ -42,7 +42,7 @@ const Lista = () => {
       })
       .then((result) => {
         if (result.isConfirmed) {
-          fetch(`https://apiapp-production.up.railway.app/api/comidas/${id}`, {
+          fetch(`https://apiapptesis.up.railway.app/api/comidas/${id}`, {
             method: "DELETE",
             headers: {
               "Content-Type": "application/json",

@@ -15,12 +15,12 @@ const Agregar = () => {
 
   const navigate = useNavigate();
 
-  const { data } = useFetch("https://apiapp-production.up.railway.app/api/comidas/verificar");
+  const { data } = useFetch("https://apiapptesis.up.railway.app/api/comidas/verificar");
 
   const [categorias, setCategorias] = useState(null);
 
   useEffect(() => {
-    fetch("https://apiapp-production.up.railway.app/api/categoria")
+    fetch("https://apiapptesis.up.railway.app/api/categoria")
       .then((response) => response.json())
       .then((categorias) => setCategorias(categorias));
   }, []);
